@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    @apply antialiased
+}
+
+body {
+    @apply bg-white transition-colors
+}
+body.dark {
+    @apply bg-zinc-900
+}
+
+/* PAGINATION */
+.pagination {
+    @apply flex items-center gap-x-1.5 border border-zinc-200 dark:border-zinc-700 p-3 rounded
+}
+.pagination .previous {
+    @apply mr-auto
+}
+.pagination .next {
+    @apply ml-auto
+}
+.pagination li:not(.break) a {
+    @apply w-9 h-9 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-sm text-zinc-500 font-semibold hover:border-zinc-600 hover:text-black dark:hover:text-white dark:hover:border-zinc-600
+}
+.pagination li.break a {
+    @apply h-9 flex items-center text-zinc-400 pb-2
+}
+.pagination li.selected a {
+    @apply !bg-primary !border-primary !text-white dark:!bg-blue-500 dark:!border-blue-500
+}
+
+.swiper-pagination-bullet{
+    @apply bg-primary dark:bg-white
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply bg-primary dark:bg-white
+}
